@@ -6,19 +6,20 @@ between [Jenkins and AWS](https://plugins.jenkins.io/oidc-provider/).
 ## Description
 
 The module is strict on the claim checks to avoid that creating an OpenID connect integration opens your AWS account to
-Jenkins. However this strictness is not taking all the risk away. Ensure you familiarize yourself with OpenID Connect
+Jenkins. However, this strictness is not taking all the risk away. Ensure you familiarize yourself with OpenID Connect
 and the docs provided by Jenkins and AWS. As always think about minimizing the privileges.
 
 The module can manage the following:
 
 - The OpenID Connect identity provider for Jenkins in your AWS account (via a submodule).
-- A role and assume role policy to check to check OIDC claims.
+- A role and assume role policy to check OIDC claims.
 
 ## Usages
 
 ```hcl
 module "jenkins_oidc" {
-  source = "github.com/spartan-stratos/terraform-modules//aws/oidc/jenkins-oidc?ref=v0.1.21"
+  source  = "c0x12c/jenkins-oidc/aws"
+  version = "1.0.0"
 
   role_name = "jenkins"
   url       = "https://jenkins.example.com/oidc"
